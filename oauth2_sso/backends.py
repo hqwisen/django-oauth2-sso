@@ -43,7 +43,7 @@ class OAuth2Backend(ModelBackend):
     USER_GROUP_MAPPINGS = _get_oauth_setting_or_none('USER_GROUP_MAPPINGS')
     USER_FIELD_MAPPINGS = _get_oauth_setting_or_none('USER_FIELD_MAPPINGS')
     USERNAME_FIELD = _get_oauth_setting_or_none('USERNAME_FIELD')
-    
+
     def __init__(self):
         self.access_token = None
         self.request = None
@@ -115,4 +115,7 @@ class OAuth2Backend(ModelBackend):
 
     @staticmethod
     def _err(r):
-        print('Error: {} - {}'.format(r.status_code, r.json()))
+        try:
+            print('Error: {} - {}'.format(r.status_code, r.json()))
+        except ValueError:
+            print('Error: {}'.format(r.status_code))
