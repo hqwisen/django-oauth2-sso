@@ -8,7 +8,6 @@ from django.shortcuts import redirect
 
 from django.http import HttpResponse
 
-# from django.urls import reverse
 from django.conf import settings
 
 from .backends import import_from
