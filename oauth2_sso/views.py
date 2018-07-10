@@ -50,7 +50,7 @@ def redirect_to_login(request):
         return HttpResponse(content, status=500)
     else:
         data = {
-            'scope': 'read:user',
+            'scope': oauth_settings['READ_SCOPE'],
             'response_type': 'code',
             'redirect_uri': oauth_settings['REDIRECT_URI'] if 'REDIRECT_URI' in oauth_settings else None,
             'client_id': oauth_settings['CLIENT_ID'] if 'CLIENT_ID' in oauth_settings else None

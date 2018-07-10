@@ -65,7 +65,7 @@ OAUTH = {
     'LOGIN_COMPLETE_REDIRECT': '/some/url/in/your/app',
     'TOKEN_URL': '<returns_access_token>',
     'GRANT_TYPE': 'authorization_code',
-
+    'READ_SCOPE: 'read:user',
      # User config (required)
     'USER_INFO_URL': '<authenticated API for getting user info>',
     'USERNAME_FIELD': 'username',
